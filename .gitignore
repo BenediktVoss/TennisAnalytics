@@ -154,9 +154,25 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+00_Dataset/*
+
+01_DataGathering/annotations.xml
+
+07_GUI/_temp/*
+
+03_BallTracking/CV/ExampleVideo.avi
+03_BallTracking/TrackNet/exps_final/*
+03_BallTracking/YOLO/ball-tracking/*
+03_BallTracking/YOLO/datasets/*
+03_BallTracking/results/*
+03_BallTracking/YOLO/datasets/*
+
+04_CourtDetection/CNN/results/*
+
+05_PlayerTracking/test_results.csv
+05_PlayerTracking/player-ball-tracking/*
+05_PlayerTracking/player-tracking/*
+
+06_Analytics/models/*
+
+07_GUI/models/*
