@@ -8,7 +8,7 @@ import numpy as np
 import random
 
 # Load the dataset once at the start
-with open("dataset/annotations.json", "r") as file:  # Replace with your dataset JSON file path
+with open("../00_Dataset/annotations.json", "r") as file:  # Replace with your dataset JSON file path
     dataset = json.load(file)
     dataset['subsets'] = dataset['subsets'][:2]  
 
@@ -230,7 +230,7 @@ def create_video_from_frames(subset_name, video_name, clip_name, frames, dataset
     return output_video_path
 
 
-def process_and_display_random_video(subset_name, dataset_folder="dataset"):
+def process_and_display_random_video(subset_name, dataset_folder="../00_Dataset"):
     # Generate random frames with specified conditions (None for default behavior)
     subset_name, video_name, clip_name, frames = get_random_video(dataset, subset_name)
 
@@ -251,37 +251,49 @@ def process_and_display_random_video(subset_name, dataset_folder="dataset"):
 
 # Creating the Gradio Blocks interface with subset filtering
 with gr.Blocks() as Video:
-    gr.Markdown("# Video generation")
-    gr.Markdown("### Visualize entire videos in subsets New and TrackNet")
-
     # Get all names of the subsets
     subset_names = [subset['name'] for subset in dataset['subsets']]
     subset_names.append("All Subsets")  # Add "All Subsets" option
 
     with gr.Row():
-        # Left Column
+        # Input Section
         with gr.Column():
-            # Dropdown input for selecting subsets
+            gr.Markdown("""### 🎥 **Tennis Video Explorer**""")
+            gr.Markdown("""
+            Explore the tennis analytics dataset by generating **random annotated videos**.
+
+            **Features**:
+            - Displays a random video clip with annotations for:
+                - **Players**: Bounding boxes for players.
+                - **Balls**: Ball positions and trajectories.
+                - **Court Lines & Nets**: Overlays for court and net structures.
+            - Provides detailed metadata and object information for each video clip.
+
+            **How to Use**:
+            1. Select a dataset subset from the dropdown.
+            2. Click **Generate Video** to view a random annotated video and its details.
+            """)
+
             subset_dropdown = gr.Dropdown(
                 choices=subset_names,
-                label="Select Subset",
+                label="🎯 Select Dataset Subset",
                 value="All Subsets",
             )
 
-            # Button to generate random frame visualization
-            random_video_button = gr.Button("Generate Random Video")
+            generate_button = gr.Button("🚀 Generate Video")
 
-            # Output for the frame details
-            frame_details_output = gr.Textbox(label="Video Details", interactive=False)
-
-        # Right Column
+        # Output Section
         with gr.Column():
-            # Output for the processed image
-            video_output = gr.Video(label="Random Video with Annotations")
+            video_output = gr.Video(label="🎬 Annotated Video")
+            details_output = gr.Textbox(
+                label="ℹ️ Video Details",
+                lines=10,
+                interactive=False,
+            )
 
-    # Functionality: Generate a random frame on button click
-    random_video_button.click(
+    # Functionality: Generate a random video
+    generate_button.click(
         fn=process_and_display_random_video,
         inputs=[subset_dropdown],
-        outputs=[video_output, frame_details_output],
+        outputs=[video_output, details_output],
     )

@@ -168,6 +168,7 @@ cython_debug/
 03_BallTracking/YOLO/datasets/*
 
 04_CourtDetection/CNN/results/*
+04_CourtDetection/CNN/models/*
 
 05_PlayerTracking/test_results.csv
 05_PlayerTracking/player-ball-tracking/*
@@ -176,3 +177,5 @@ cython_debug/
 06_Analytics/models/*
 
 07_GUI/models/*
+
+06_Analytics/scaler.pkl

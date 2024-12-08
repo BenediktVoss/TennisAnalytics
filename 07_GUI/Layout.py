@@ -1,6 +1,8 @@
 import gradio as gr
 from Dataset import Dataset
 from Video import Video
+from InferenceDataset import Inference
+from InferenceOwn import InferenceOwn
 
 theme = gr.themes.Monochrome(
     primary_hue="stone",
@@ -27,8 +29,8 @@ with gr.Blocks(theme=theme, css=css) as Layout:
 
     with gr.Row(): # Tabbed Interface
         tabbed_interface = gr.TabbedInterface(
-            [Dataset, Video],
-            tab_names=["Dataset", "Video"],
+            [Dataset, Video, Inference, InferenceOwn],
+            tab_names=["Explore Dataset Frames", "Explore Dataset Videos", "Test Inference on Dataset", "Use your own Videos" ],
         )
 
     gr.Markdown("### Created By: Benedikt Voß")
