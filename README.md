@@ -61,3 +61,6 @@ python 07_GUI/app.py
 ## License
 This project is licensed under the terms of the `LICENSE` file. Ensure to read and comply with its terms for usage and distribution.
 
+## Usage of AI
+For the creation of this project multiple AI tools for enhanced software developement were used, like GitHub Copilot and ChatGPT. 
+
