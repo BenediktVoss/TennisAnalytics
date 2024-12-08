@@ -55,7 +55,7 @@ python 07_GUI/app.py
 ## Examples
 
 - **Example Inference Video:** Check out `Example_Inference.mp4` for a demonstration of the project in action.
-![GUI Preview](07_GUI/GUI.png)
+![GUI](https://github.com/user-attachments/assets/b3f5fc8c-69ac-4127-a294-90eff5fe4ca8)
 
 
 ## License
