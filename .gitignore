@@ -160,15 +160,15 @@ cython_debug/
 
 07_GUI/_temp/*
 
-03_BallTracking/CV/ExampleVideo.avi
-03_BallTracking/TrackNet/exps_final/*
-03_BallTracking/YOLO/ball-tracking/*
-03_BallTracking/YOLO/datasets/*
+03_BallTracking/1_CV/ExampleVideo.avi
+03_BallTracking/2_TrackNet/exps_final/*
+03_BallTracking/3_YOLO/ball-tracking/*
+03_BallTracking/3_YOLO/datasets/*
 03_BallTracking/results/*
-03_BallTracking/YOLO/datasets/*
+03_BallTracking/3_YOLO/datasets/*
 
-04_CourtDetection/CNN/results/*
-04_CourtDetection/CNN/models/*
+04_CourtDetection/2_CNN/results/*
+04_CourtDetection/2_CNN/models/*
 
 05_PlayerTracking/test_results.csv
 05_PlayerTracking/player-ball-tracking/*

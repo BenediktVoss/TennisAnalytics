@@ -24,7 +24,10 @@ In generel the project can be devided into two parts:
 - **`LICENSE`**: License information.
 - **`requirements.txt`**: Python dependencies for the project. Python 3.12 was used for developemnt.
 
+In general the files and folders contain a prefix numeration and should be inspected and executed in the correct order.
 ## Requirements
+
+The code is developed and run on a windows machine, possible for other os there are some changes in file path handling.
 
 Install the dependencies listed in `requirements.txt`:
 
@@ -32,6 +35,8 @@ Additionally, ensure you have the following requirements installed:
 
 - **PyTorch**: For deep learning models. Install it from [PyTorch](https://pytorch.org/get-started/locally/).
 - **CUDA**: For GPU acceleration. Ensure you have the appropriate CUDA version installed. Check compatibility with your PyTorch version [here](https://pytorch.org/get-started/locally/).
+
+**It is highly reccomended to run this on a machine with CUDA installed, otherwise trainig and Inference of the neural networks will be significantly slower!**
 
 
 ## How to Run
